@@ -4,12 +4,15 @@ import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const projectsCollection = await getCollection('projects');
-  return projectsCollection.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
-  }));
+  return projectsCollection.map((entry, index) => {
+    const nextEntry = projectsCollection[(index + 1) % projectsCollection.length];
+    return {
+      params: { slug: entry.slug }, props: { entry, nextEntry },
+    };
+  });
 }
 // 2. When it's time to render, you can get the entry directly from the prop
-const { entry } = Astro.props;
+const { entry, nextEntry } = Astro.props;
 const { Content } = await entry.render();
 ---
 <Layout
@@ -34,6 +37,12 @@ const { Content } = await entry.render();
           <li class="technologies-list__item"> {tech} </li>
         ))}
       </ul>
+    }
+    {nextEntry.slug !== entry.slug &&
+      <a class="link next-project" href={`/projects/${nextEntry.slug}`}>
+        <span class="next-project__label">Next project</span>
+        <span class="next-project__title">{nextEntry.data.title} &rarr;</span>
+      </a>
     }
   </main>
 </Layout>
@@ -102,6 +111,24 @@ const { Content } = await entry.render();
       padding: 5px 15px;
       border-radius: 8px;
       background: rgba(var(--accent), 0.2);
+    }
+  }
+  .next-project {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+
+    &__label {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    &__title {
+      font-size: 1.35rem;
+      font-weight: 700;
     }
   }
 </style>
