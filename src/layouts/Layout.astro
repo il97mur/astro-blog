@@ -13,6 +13,7 @@ const {
 
 import Header from '../components/Header.astro';
 import { ViewTransitions } from 'astro:transitions';
+import SpeedInsights from '@vercel/speed-insights/astro';
 ---
 
 <!DOCTYPE html>
@@ -33,6 +34,7 @@ import { ViewTransitions } from 'astro:transitions';
 	<body>
 		<Header />
 		<slot />
+		<SpeedInsights />
 	</body>
 </html>
 <style is:global lang="scss">
