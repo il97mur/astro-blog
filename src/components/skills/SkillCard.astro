@@ -2,70 +2,44 @@
 export interface Props {
   name: string;
   level: number;
-  desctiption?: string;
 }
 
-const { name, level, description = '' } = Astro.props;
+const { name, level } = Astro.props;
 ---
 
 <li class="skill-card">
   <span class="skill-card__name">
     {name}
   </span>
-  <div class="skill-card__level-block">
-    <div class="skill-card__level-points-wrap">
-      {Array(level).fill(null).map(() => (
-        <span class="skill-card__level-point skill-card__level-point--filled">—</span>
-      ))}
-      {Array(10 - level).fill(null).map(() => (
-        <span class="skill-card__level-point">—</span>
-      ))}
-    </div>
+  <div class="skill-card__track">
+    <div class="skill-card__fill" style={`width: ${level * 10}%`}></div>
   </div>
-  {description &&
-    <p> {description} </p>
-  }
 </li>
 
 <style lang="scss">
   .skill-card {
     display: flex;
     flex-direction: column;
+    gap: 8px;
+
     &__name {
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       font-weight: 600;
     }
 
-    &__level-block {
-      display: flex;
-      padding: 10px 0px 0px;
+    &__track {
+      height: 6px;
+      border-radius: 4px;
+      background: #e5e5e5;
+      overflow: hidden;
+    }
+
+    &__fill {
+      height: 100%;
+      border-radius: 4px;
       background-image: var(--accent-gradient);
       background-size: 400%;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    &__level-points-wrap {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    &__level-point {
-      font-size: 50px;
-      font-weight: 700;
-      line-height: 1;
-      color: #ccc;
-      cursor: default;
-
-      @media screen and (max-width: 768px) {
-        font-size: 7vw;
-      }
-
-      &--filled {
-        color: transparent;
-      }
+      background-position: 0%;
     }
   }
 </style>

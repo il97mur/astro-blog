@@ -40,6 +40,18 @@ const projects = await getCollection('projects');
 			<h2>My skills</h2>
 			<SkillsList />
 		</section>
+
+		<section>
+			<h2>Also bring to the team</h2>
+			<ul class="tags-list">
+				<li class="tags-list__item">Git</li>
+				<li class="tags-list__item">Code Review</li>
+				<li class="tags-list__item">Mentorship</li>
+				<li class="tags-list__item">Architecture Design (Feature-Sliced Design)</li>
+				<li class="tags-list__item">Performance Optimization</li>
+				<li class="tags-list__item">Backend Literacy (REST API, MVC)</li>
+			</ul>
+		</section>
 	</main>
 </Layout>
 
@@ -80,5 +92,19 @@ const projects = await getCollection('projects');
 		list-style: none;
 		padding: 0;
 		margin: 0;
+	}
+	.tags-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 12px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.tags-list__item {
+		padding: 6px 14px;
+		border-radius: 8px;
+		background: rgba(var(--accent), 0.15);
+		font-size: 0.95rem;
 	}
 </style>

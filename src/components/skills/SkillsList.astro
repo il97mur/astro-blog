@@ -3,7 +3,15 @@ import SkillCard from "./SkillCard.astro";
 
 const skillList = [
   {
-    name: 'React + TypeScript',
+    name: 'React',
+    level: 9,
+  },
+  {
+    name: 'TypeScript',
+    level: 9,
+  },
+  {
+    name: 'Vue.js / Nuxt.js',
     level: 8,
   },
   {
@@ -11,19 +19,11 @@ const skillList = [
     level: 7,
   },
   {
-    name: 'Vue.js + Nuxt.js',
-    level: 7,
-  },
-  {
-    name: 'JavaScript',
-    level: 8,
-  },
-  {
     name: 'HTML / CSS',
-    level: 8,
+    level: 9,
   },
   {
-    name: 'PHP (Laravel, reading/working with existing code)',
+    name: 'PHP / Laravel',
     level: 4,
   },
   {
@@ -34,7 +34,7 @@ const skillList = [
 ---
 <ul>
   {skillList.map(skill => (
-    <SkillCard 
+    <SkillCard
       name={skill.name}
       level={skill.level}
     />

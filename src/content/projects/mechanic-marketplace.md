@@ -23,4 +23,4 @@ Lazy-loaded the map component (React.lazy) since MapLibre noticeably increased t
 
 Built registration and profile forms with Inertia Forms, backend validation and PayPal subscription payments end-to-end on the client.
 
-Cut main page load time by 30% through bundle optimization (code splitting) and lazy loading.
+**Cut main page load time by 30%** through bundle optimization (code splitting) and lazy loading.

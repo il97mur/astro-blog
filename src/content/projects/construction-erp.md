@@ -21,6 +21,6 @@ Designed the client architecture on Feature-Sliced Design instead of a simple fe
 
 Built complex UIs for nested entities: deeply filterable tables, tree structures, hierarchical forms.
 
-Moved data fetching and caching to RTK Query, replacing hand-written cache invalidation logic with tag-based invalidation — cut the amount of code by 25% compared to classic Redux.
+Moved data fetching and caching to RTK Query, replacing hand-written cache invalidation logic with tag-based invalidation — **cut the amount of code by 25%** compared to classic Redux.
 
-Optimized rendering performance (memoization, React.memo, useCallback) — reduced UI response time by 35%.
+Optimized rendering performance (memoization, React.memo, useCallback) — **reduced UI response time by 35%**.
