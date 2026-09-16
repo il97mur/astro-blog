@@ -17,14 +17,16 @@ const { Content } = await entry.render();
   metaDescription={entry.data.description}
 >
   <main>
-    <a class="link" href="/">
+    <a class="link back-link" href="/">
       <span>&larr;</span>
       Go back
     </a>
-    
-    <Content />
+
+    <div class="case-study">
+      <Content />
+    </div>
     {entry.data.technologies &&
-      <h2>
+      <h2 class="technologies-title">
         Technologies
       </h2>
       <ul class="technologies-list">
@@ -41,6 +43,43 @@ const { Content } = await entry.render();
     max-width: 800px;
     margin: auto;
     padding: 1.5rem;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+  }
+  .case-study {
+    margin-top: 1.5rem;
+
+    :global(h1) {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1.25rem;
+    }
+    :global(p) {
+      font-size: 1.125rem;
+      line-height: 1.65;
+      color: #333;
+      margin: 0 0 1.1rem;
+    }
+    :global(ul) {
+      margin: 0 0 1.1rem;
+      padding-left: 1.25rem;
+    }
+    :global(li) {
+      font-size: 1.125rem;
+      line-height: 1.65;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+  }
+  .technologies-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
   }
   .technologies-list {
     display: flex;
