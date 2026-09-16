@@ -75,6 +75,15 @@ const { Content } = await entry.render();
       color: #333;
       margin-bottom: 0.4rem;
     }
+    :global(strong) {
+      font-weight: 700;
+      background-image: var(--accent-gradient);
+      background-size: 400%;
+      background-position: 0%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
   .technologies-title {
     font-size: 1.25rem;
