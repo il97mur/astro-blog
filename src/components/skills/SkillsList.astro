@@ -1,53 +1,33 @@
 ---
-import SkillCard from "./SkillCard.astro";
-
 const skillList = [
-  {
-    name: 'React',
-    level: 9,
-  },
-  {
-    name: 'TypeScript',
-    level: 9,
-  },
-  {
-    name: 'Vue.js / Nuxt.js',
-    level: 8,
-  },
-  {
-    name: 'Redux Toolkit / RTK Query',
-    level: 7,
-  },
-  {
-    name: 'HTML / CSS',
-    level: 9,
-  },
-  {
-    name: 'PHP / Laravel',
-    level: 4,
-  },
-  {
-    name: 'Node.js',
-    level: 3,
-  },
+  'React',
+  'TypeScript',
+  'Vue.js / Nuxt.js',
+  'Redux Toolkit / RTK Query',
+  'HTML / CSS',
+  'PHP / Laravel',
+  'Node.js',
 ]
 ---
-<ul>
+<ul class="tags-list">
   {skillList.map(skill => (
-    <SkillCard
-      name={skill.name}
-      level={skill.level}
-    />
+    <li class="tags-list__item">{skill}</li>
   ))}
 </ul>
 
 <style>
-  ul {
+  .tags-list {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 0;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    list-style: none;
     padding: 0;
-    list-style-type: none;
+    margin: 0;
+  }
+  .tags-list__item {
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: rgba(var(--accent), 0.15);
+    font-size: 0.95rem;
   }
 </style>
