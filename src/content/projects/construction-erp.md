@@ -1,16 +1,17 @@
 ---
-title: 'Construction ERP System'
-description: 'React/TS ERP for managing construction projects, budgets and resources'
-href: '#'
+title: "Construction ERP System"
+description: "React/TS ERP for managing construction projects, budgets and resources"
+href: "#"
 
-technologies: [
-    'React',
-    'TypeScript',
-    'Redux Toolkit',
-    'RTK Query',
-    'TailwindCSS',
-    'Feature-Sliced Design',
-]
+technologies:
+  [
+    "React",
+    "TypeScript",
+    "Redux Toolkit",
+    "RTK Query",
+    "TailwindCSS",
+    "Feature-Sliced Design",
+  ]
 ---
 
 # Construction ERP System

@@ -1,86 +1,86 @@
 ---
 export interface Props {
-	title: string;
-	body: string;
-	href: string;
-	badges?: string[];
+  title: string;
+  body: string;
+  href: string;
+  badges?: string[];
 }
 
 const { href, title, body, badges = [] } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-		<ul class="badges-list">
-			{badges.map(technology => (
-				<li class="badges-list__item">{technology}</li>
-			))}
-		</ul>
-	</a>
+  <a href={href}>
+    <h2>
+      {title}
+      <span>&rarr;</span>
+    </h2>
+    <p>{body}</p>
+    <ul class="badges-list">
+      {badges.map((technology) => (
+        <li class="badges-list__item">{technology}</li>
+      ))}
+    </ul>
+  </a>
 </li>
 <style lang="scss">
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.25rem;
-		background-color: white;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 0.6rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-		color: #444;
-	}
+  .link-card {
+    list-style: none;
+    display: flex;
+    padding: 0.25rem;
+    background-color: white;
+    background-image: none;
+    background-size: 400%;
+    border-radius: 0.6rem;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    color: #444;
+  }
 
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1rem 1.3rem;
-		border-radius: 0.35rem;
-		color: #111;
-		background-color: white;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-		color: #444;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent));
-	}
-	.badges-list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 8px 12px;
-		list-style-type: none;
-		margin: 0;
-		margin-top: 15px;
-		padding: 0;
+  .link-card > a {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 1rem 1.3rem;
+    border-radius: 0.35rem;
+    color: #111;
+    background-color: white;
+    opacity: 0.8;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    color: #444;
+  }
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+    background-image: var(--accent-gradient);
+  }
+  .link-card:is(:hover, :focus-within) h2 {
+    color: rgb(var(--accent));
+  }
+  .badges-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    list-style-type: none;
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
 
-		&__item {
-			padding: 5px 10px;
-			border-radius: 8px;
-			background: rgba(var(--accent), 0.3);
-			color: currentColor;
-		}
-	}
+    &__item {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: rgba(var(--accent), 0.3);
+      color: currentColor;
+    }
+  }
 </style>

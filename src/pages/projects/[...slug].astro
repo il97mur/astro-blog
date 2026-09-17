@@ -1,13 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const projectsCollection = await getCollection('projects');
+  const projectsCollection = await getCollection("projects");
   return projectsCollection.map((entry, index) => {
-    const nextEntry = projectsCollection[(index + 1) % projectsCollection.length];
+    const nextEntry =
+      projectsCollection[(index + 1) % projectsCollection.length];
     return {
-      params: { slug: entry.slug }, props: { entry, nextEntry },
+      params: { slug: entry.slug },
+      props: { entry, nextEntry },
     };
   });
 }
@@ -15,6 +17,7 @@ export async function getStaticPaths() {
 const { entry, nextEntry } = Astro.props;
 const { Content } = await entry.render();
 ---
+
 <Layout
   title={`Projects - ${entry.data.title}`}
   metaDescription={entry.data.description}
@@ -28,22 +31,22 @@ const { Content } = await entry.render();
     <div class="case-study">
       <Content />
     </div>
-    {entry.data.technologies &&
-      <h2 class="technologies-title">
-        Technologies
-      </h2>
-      <ul class="technologies-list">
-        {entry.data.technologies.map(tech => (
-          <li class="technologies-list__item"> {tech} </li>
-        ))}
-      </ul>
-    }
-    {nextEntry.slug !== entry.slug &&
+    {entry.data.technologies && (
+      <>
+        <h2 class="technologies-title">Technologies</h2>
+        <ul class="technologies-list">
+          {entry.data.technologies.map((tech) => (
+            <li class="technologies-list__item"> {tech} </li>
+          ))}
+        </ul>
+      </>
+    )}
+    {nextEntry.slug !== entry.slug && (
       <a class="link next-project" href={`/projects/${nextEntry.slug}`}>
         <span class="next-project__label">Next project</span>
         <span class="next-project__title">{nextEntry.data.title} &rarr;</span>
       </a>
-    }
+    )}
   </main>
 </Layout>
 

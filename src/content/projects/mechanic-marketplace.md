@@ -1,16 +1,10 @@
 ---
-title: 'Mechanic & Auto Shop Marketplace'
-description: 'Marketplace connecting mechanics/shops with customers via an interactive map'
-href: '#'
+title: "Mechanic & Auto Shop Marketplace"
+description: "Marketplace connecting mechanics/shops with customers via an interactive map"
+href: "#"
 
-technologies: [
-    'React',
-    'TypeScript',
-    'Inertia.js',
-    'MapLibre',
-    'Zustand',
-    'PayPal',
-]
+technologies:
+  ["React", "TypeScript", "Inertia.js", "MapLibre", "Zustand", "PayPal"]
 ---
 
 # Mechanic & Auto Shop Marketplace
