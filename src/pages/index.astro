@@ -1,132 +1,139 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 
-import { getCollection } from 'astro:content';
-import SkillsList from '../components/skills/SkillsList.astro';
+import { getCollection } from "astro:content";
+import SkillsList from "../components/skills/SkillsList.astro";
 
-const projects = await getCollection('projects');
+const projects = await getCollection("projects");
 ---
 
 <Layout
-	title="Ilya Murzalev — Senior Frontend Engineer"
-	metaDescription="Senior Frontend Engineer (React/TypeScript, Vue/Nuxt), 6+ years of experience building ERP systems, marketplaces and complex SPAs. Portfolio and case studies."
+  title="Ilya Murzalev — Senior Frontend Engineer"
+  metaDescription="Senior Frontend Engineer (React/TypeScript, Vue/Nuxt), 6+ years of experience building ERP systems, marketplaces and complex SPAs. Portfolio and case studies."
 >
-	<main>
-		<h1>Hello.</h1>
-		<p class="text-lg font-medium">My name is Ilya Murzalev.</p>
-		<p class="text-lg font-medium">And I'm a <span class="text-gradient">senior frontend engineer.</span></p>
-		<p class="text-medium">
-			6+ years of commercial experience building
-			complex SPAs and admin panels: ERP systems, marketplaces, internal tools.
-			Primary stack: React, TypeScript, Redux Toolkit. Also comfortable with Vue.js, Nuxt.js,
-			and reading backend code (PHP/Laravel), which helps me work closely with backend engineers.
-		</p>
-		<p class="text-medium">
-			Below you can see the list of projects that I worked on:
-		</p>
-		<ul role="list" class="projects-list">
-			{projects.map(project => (
-				<Card
-					title={project.data.title}
-					body={project.data.description}
-					href={`/projects/${project.slug}`}
-					badges={project.data.technologies}
-				/>
-			))}
-		</ul>
+  <main>
+    <h1>Hello.</h1>
+    <p class="text-lg font-medium">My name is Ilya Murzalev.</p>
+    <p class="text-lg font-medium">
+      And I'm a <span class="text-gradient">senior frontend engineer.</span>
+    </p>
+    <p class="text-medium">
+      6+ years of commercial experience building complex SPAs and admin panels:
+      ERP systems, marketplaces, internal tools. Primary stack: React,
+      TypeScript, Redux Toolkit. Also comfortable with Vue.js, Nuxt.js, and
+      reading backend code (PHP/Laravel), which helps me work closely with
+      backend engineers.
+    </p>
+    <p class="text-medium">
+      Below you can see the list of projects that I worked on:
+    </p>
+    <ul role="list" class="projects-list">
+      {projects.map((project) => (
+        <Card
+          title={project.data.title}
+          body={project.data.description}
+          href={`/projects/${project.slug}`}
+          badges={project.data.technologies}
+        />
+      ))}
+    </ul>
 
-		<section>
-			<h2 class="skills-heading">My skills</h2>
-			<SkillsList />
-		</section>
+    <section>
+      <h2 class="skills-heading">My skills</h2>
+      <SkillsList />
+    </section>
 
-		<section class="secondary-section">
-			<h2 class="secondary-heading">Also bring to the team</h2>
-			<ul class="tags-list">
-				<li class="tags-list__item tags-list__item--ghost">Git</li>
-				<li class="tags-list__item tags-list__item--ghost">Code Review</li>
-				<li class="tags-list__item tags-list__item--ghost">Mentorship</li>
-				<li class="tags-list__item tags-list__item--ghost">Backend Literacy (REST API, MVC)</li>
-				<li class="tags-list__item tags-list__item--ghost">AI-Assisted Development (Claude Code, agent workflows)</li>
-			</ul>
-		</section>
-	</main>
+    <section class="secondary-section">
+      <h2 class="secondary-heading">Also bring to the team</h2>
+      <ul class="tags-list">
+        <li class="tags-list__item tags-list__item--ghost">Git</li>
+        <li class="tags-list__item tags-list__item--ghost">Code Review</li>
+        <li class="tags-list__item tags-list__item--ghost">Mentorship</li>
+        <li class="tags-list__item tags-list__item--ghost">
+          Backend Literacy (REST API, MVC)
+        </li>
+        <li class="tags-list__item tags-list__item--ghost">
+          AI-Assisted Development (Claude Code, agent workflows)
+        </li>
+      </ul>
+    </section>
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 800px;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	section {
-		margin: 3rem 0;
-	}
-	.secondary-section {
-		margin-top: 2rem;
-	}
-	.skills-heading {
-		font-size: 1.75rem;
-		font-weight: 800;
-		margin: 0 0 1rem;
-	}
-	.secondary-heading {
-		font-size: 0.85rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-		color: #999;
-		margin: 0 0 1rem;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.text-lg {
-		font-size: 2.3rem;
-	}
-	.text-medium {
-		font-size: 1.5rem;
-	}
-	.font-medium {
-		font-weight: 500;
-	}
-	.projects-list {
-		display: grid;
-		gap: 20px 35px;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	.tags-list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px 12px;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	.tags-list__item {
-		padding: 6px 14px;
-		border-radius: 8px;
-		background: rgba(var(--accent), 0.15);
-		font-size: 0.95rem;
-	}
-	.tags-list__item--ghost {
-		background: transparent;
-		border: 1px solid #ddd;
-		color: #777;
-		font-size: 0.85rem;
-		padding: 5px 13px;
-	}
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 800px;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  section {
+    margin: 3rem 0;
+  }
+  .secondary-section {
+    margin-top: 2rem;
+  }
+  .skills-heading {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+  }
+  .secondary-heading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #999;
+    margin: 0 0 1rem;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .text-lg {
+    font-size: 2.3rem;
+  }
+  .text-medium {
+    font-size: 1.5rem;
+  }
+  .font-medium {
+    font-weight: 500;
+  }
+  .projects-list {
+    display: grid;
+    gap: 20px 35px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tags-list__item {
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: rgba(var(--accent), 0.15);
+    font-size: 0.95rem;
+  }
+  .tags-list__item--ghost {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #777;
+    font-size: 0.85rem;
+    padding: 5px 13px;
+  }
 </style>

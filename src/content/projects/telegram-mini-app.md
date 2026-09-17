@@ -1,13 +1,9 @@
 ---
-title: 'Telegram Mini App (Game)'
-description: 'Next.js mini-game integrated with Telegram WebApp API and Supabase'
-href: '#'
+title: "Telegram Mini App (Game)"
+description: "Next.js mini-game integrated with Telegram WebApp API and Supabase"
+href: "#"
 
-technologies: [
-    'Next.js',
-    'Supabase',
-    'Telegram WebApp API',
-]
+technologies: ["Next.js", "Supabase", "Telegram WebApp API"]
 ---
 
 # Telegram Mini App (Game)

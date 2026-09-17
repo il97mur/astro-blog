@@ -1,17 +1,18 @@
 ---
-title: 'Telemedicine Platform'
-description: 'Vue 3/Nuxt 4 platform for doctors and patients with strict data-security requirements'
-href: '#'
+title: "Telemedicine Platform"
+description: "Vue 3/Nuxt 4 platform for doctors and patients with strict data-security requirements"
+href: "#"
 
-technologies: [
-    'Vue.js',
-    'Nuxt.js',
-    'TypeScript',
-    'TailwindCSS',
-    'VeeValidate',
-    'Zod',
-    'PrimeVue',
-]
+technologies:
+  [
+    "Vue.js",
+    "Nuxt.js",
+    "TypeScript",
+    "TailwindCSS",
+    "VeeValidate",
+    "Zod",
+    "PrimeVue",
+  ]
 ---
 
 # Telemedicine Platform
