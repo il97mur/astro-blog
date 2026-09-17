@@ -37,20 +37,20 @@ const projects = await getCollection('projects');
 		</ul>
 
 		<section>
-			<h2>My skills</h2>
+			<h2 class="skills-heading">My skills</h2>
 			<SkillsList />
 		</section>
 
-		<section>
-			<h2>Also bring to the team</h2>
+		<section class="secondary-section">
+			<h2 class="secondary-heading">Also bring to the team</h2>
 			<ul class="tags-list">
-				<li class="tags-list__item">Git</li>
-				<li class="tags-list__item">Code Review</li>
-				<li class="tags-list__item">Mentorship</li>
-				<li class="tags-list__item">Architecture Design (Feature-Sliced Design)</li>
-				<li class="tags-list__item">Performance Optimization</li>
-				<li class="tags-list__item">Backend Literacy (REST API, MVC)</li>
-				<li class="tags-list__item">AI-Assisted Development (Claude Code, agent workflows)</li>
+				<li class="tags-list__item tags-list__item--ghost">Git</li>
+				<li class="tags-list__item tags-list__item--ghost">Code Review</li>
+				<li class="tags-list__item tags-list__item--ghost">Mentorship</li>
+				<li class="tags-list__item tags-list__item--ghost">Architecture Design (Feature-Sliced Design)</li>
+				<li class="tags-list__item tags-list__item--ghost">Performance Optimization</li>
+				<li class="tags-list__item tags-list__item--ghost">Backend Literacy (REST API, MVC)</li>
+				<li class="tags-list__item tags-list__item--ghost">AI-Assisted Development (Claude Code, agent workflows)</li>
 			</ul>
 		</section>
 	</main>
@@ -69,6 +69,22 @@ const projects = await getCollection('projects');
 	}
 	section {
 		margin: 3rem 0;
+	}
+	.secondary-section {
+		margin-top: 2rem;
+	}
+	.skills-heading {
+		font-size: 1.75rem;
+		font-weight: 800;
+		margin: 0 0 1rem;
+	}
+	.secondary-heading {
+		font-size: 0.85rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: #999;
+		margin: 0 0 1rem;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
@@ -107,5 +123,12 @@ const projects = await getCollection('projects');
 		border-radius: 8px;
 		background: rgba(var(--accent), 0.15);
 		font-size: 0.95rem;
+	}
+	.tags-list__item--ghost {
+		background: transparent;
+		border: 1px solid #ddd;
+		color: #777;
+		font-size: 0.85rem;
+		padding: 5px 13px;
 	}
 </style>
