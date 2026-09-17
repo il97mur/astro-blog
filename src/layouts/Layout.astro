@@ -1,69 +1,74 @@
 ---
 export interface Props {
-	title: string;
-	header?: boolean;
-	metaDescription?: string;
+  title: string;
+  metaDescription?: string;
 }
 
-const {
-	title,
-	header = true,
-	metaDescription = 'The page of my site',
-} = Astro.props;
+const { title, metaDescription = "The page of my site" } = Astro.props;
 
-import Header from '../components/Header.astro';
-import { ViewTransitions } from 'astro:transitions';
-import SpeedInsights from '@vercel/speed-insights/astro';
-import Analytics from '@vercel/analytics/astro';
+import Header from "../components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from "@vercel/analytics/astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content="#5ede9f4d" />
-		{metaDescription && 
-			<meta name="description" content={metaDescription} />
-		}
-		<title>{title}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#5ede9f4d" />
+    {metaDescription && <meta name="description" content={metaDescription} />}
+    <title>{title}</title>
 
-		<ViewTransitions />
-		<Analytics />
-	</head>
-	<body>
-		<Header />
-		<slot />
-		<SpeedInsights />
-	</body>
+    <ViewTransitions />
+    <Analytics />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <SpeedInsights />
+  </body>
 </html>
 <style is:global lang="scss">
-	:root {
-		--accent: 94, 222, 159;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #7762da 30%, white 60%);
-	}
-	html {
-		margin: 0;
-		padding: 0;
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	body {
-		margin: 0;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-	.link {
-		color: currentColor;
-		text-decoration: none;
-		transition: all .3s ease;
+  :root {
+    --accent: 94, 222, 159;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #7762da 30%,
+      white 60%
+    );
+  }
+  html {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+    background-color: #f6f6f6;
+  }
+  body {
+    margin: 0;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  .link {
+    color: currentColor;
+    text-decoration: none;
+    transition: all 0.3s ease;
 
-		&:hover {
-			color: rgb(var(--accent));
-		}
-	}
+    &:hover {
+      color: rgb(var(--accent));
+    }
+  }
 </style>
