@@ -16,7 +16,7 @@ import Analytics from "@vercel/analytics/astro";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#5ede9f4d" />
@@ -41,6 +41,19 @@ import Analytics from "@vercel/analytics/astro";
       #7762da 30%,
       white 60%
     );
+
+    /* Layout tokens */
+    --content-width: 880px;
+    --page-padding: clamp(1rem, 4vw, 1.5rem);
+
+    /* Fluid type scale — scales continuously between mobile and desktop
+         instead of jumping at breakpoints, and keeps sizing consistent
+         across pages that share a role (e.g. every page's main heading). */
+    --fs-eyebrow: 1rem;
+    --fs-display: clamp(2rem, 1.5rem + 2.2vw, 3rem);
+    --fs-h1-case: clamp(1.75rem, 1.4rem + 1.5vw, 2.25rem);
+    --fs-h2: clamp(1.35rem, 1.15rem + 1vw, 1.75rem);
+    --fs-body: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
   }
   html {
     margin: 0;
