@@ -20,10 +20,10 @@ const projects = await getCollection("projects");
     </p>
     <p class="text-medium">
       6+ years of commercial experience building complex SPAs and admin panels:
-      ERP systems, marketplaces, internal tools. Primary stack: React,
-      TypeScript, Redux Toolkit. Also comfortable with Vue.js, Nuxt.js, and
-      reading backend code (PHP/Laravel), which helps me work closely with
-      backend engineers.
+      ERP systems, marketplaces, internal tools. Primary stack:{" "}
+      <strong class="highlight">React, TypeScript, Redux Toolkit</strong>. Also
+      comfortable with Vue.js, Nuxt.js, and reading backend code (PHP/Laravel),
+      which helps me work closely with backend engineers.
     </p>
     <p class="text-medium">
       Below you can see the list of projects that I worked on:
@@ -88,15 +88,19 @@ const projects = await getCollection("projects");
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: #999;
+    color: #666;
     margin: 0 0 1rem;
   }
-  .text-gradient {
+  .text-gradient,
+  .highlight {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     background-position: 0%;
+  }
+  .highlight {
+    font-weight: 700;
   }
   .text-lg {
     font-size: 2.3rem;
@@ -131,8 +135,8 @@ const projects = await getCollection("projects");
   }
   .tags-list__item--ghost {
     background: transparent;
-    border: 1px solid #ddd;
-    color: #777;
+    border: 1px solid #ccc;
+    color: #555;
     font-size: 0.85rem;
     padding: 5px 13px;
   }
