@@ -2,6 +2,7 @@
 title: "Mechanic & Auto Shop Marketplace"
 description: "Marketplace connecting mechanics/shops with customers via an interactive map"
 href: "#"
+order: 3
 
 technologies:
   ["React", "TypeScript", "Inertia.js", "MapLibre", "Zustand", "PayPal"]

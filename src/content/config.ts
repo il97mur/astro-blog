@@ -6,6 +6,7 @@ const projectsCollection = defineCollection({
     description: z.string().max(100),
     href: z.string(),
     technologies: z.array(z.string()).optional(),
+    order: z.number(),
   }),
 });
 

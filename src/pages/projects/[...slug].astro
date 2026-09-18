@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const projectsCollection = await getCollection("projects");
+  const projectsCollection = (await getCollection("projects")).sort(
+    (a, b) => a.data.order - b.data.order,
+  );
   return projectsCollection.map((entry, index) => {
     const nextEntry =
       projectsCollection[(index + 1) % projectsCollection.length];

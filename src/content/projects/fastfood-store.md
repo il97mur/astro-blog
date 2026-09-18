@@ -2,6 +2,7 @@
 title: "Fastfood Delivery Store"
 description: "Vue 2/Vuex storefront with cart, filtering and order flow, Laravel backend"
 href: "#"
+order: 4
 
 technologies: ["Vue.js", "Vuex", "SCSS", "Axios", "Laravel"]
 ---

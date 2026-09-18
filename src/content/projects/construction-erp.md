@@ -2,6 +2,7 @@
 title: "Construction ERP System"
 description: "React/TS ERP for managing construction projects, budgets and resources"
 href: "#"
+order: 2
 
 technologies:
   [

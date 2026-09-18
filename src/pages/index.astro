@@ -5,7 +5,9 @@ import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
 import SkillsList from "../components/skills/SkillsList.astro";
 
-const projects = await getCollection("projects");
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 ---
 
 <Layout

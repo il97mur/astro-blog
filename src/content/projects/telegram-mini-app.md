@@ -2,6 +2,7 @@
 title: "Telegram Mini App (Game)"
 description: "Next.js mini-game integrated with Telegram WebApp API and Supabase"
 href: "#"
+order: 5
 
 technologies: ["Next.js", "Supabase", "Telegram WebApp API"]
 ---
