@@ -77,10 +77,12 @@ const { href, title, body, badges = [] } = Astro.props;
     padding: 0;
 
     &__item {
-      padding: 5px 10px;
+      padding: 4px 9px;
       border-radius: 8px;
-      background: rgba(var(--accent), 0.3);
-      color: currentColor;
+      background: transparent;
+      border: 1px solid #ccc;
+      color: #555;
+      font-size: 0.85rem;
     }
   }
 </style>

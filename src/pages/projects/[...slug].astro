@@ -111,9 +111,11 @@ const { Content } = await entry.render();
 
     &__item {
       list-style: none;
-      padding: 5px 15px;
+      padding: 4px 14px;
       border-radius: 8px;
-      background: rgba(var(--accent), 0.2);
+      background: transparent;
+      border: 1px solid #ccc;
+      color: #555;
     }
   }
   .next-project {
@@ -126,7 +128,7 @@ const { Content } = await entry.render();
 
     &__label {
       font-size: 0.9rem;
-      color: #777;
+      color: #666;
     }
 
     &__title {
