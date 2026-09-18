@@ -15,19 +15,19 @@ const projects = (await getCollection("projects")).sort(
   metaDescription="Senior Frontend Engineer (React/TypeScript, Vue/Nuxt), 6+ years of experience building ERP systems, marketplaces and complex SPAs. Portfolio and case studies."
 >
   <main>
-    <h1>Hello.</h1>
-    <p class="text-lg font-medium">My name is Ilya Murzalev.</p>
-    <p class="text-lg font-medium">
-      And I'm a <span class="text-gradient">senior frontend engineer.</span>
-    </p>
-    <p class="text-medium">
+    <p class="eyebrow">Hello, I'm</p>
+    <h1 class="display">
+      Ilya Murzalev —{" "}
+      <span class="text-gradient">Senior Frontend Engineer</span>
+    </h1>
+    <p class="text-body">
       6+ years of commercial experience building complex SPAs and admin panels:
       ERP systems, marketplaces, internal tools. Primary stack:{" "}
       <strong class="highlight">React, TypeScript, Redux Toolkit</strong>. Also
       comfortable with Vue.js, Nuxt.js, and reading backend code (PHP/Laravel),
       which helps me work closely with backend engineers.
     </p>
-    <p class="text-medium">
+    <p class="text-body">
       Below you can see the list of projects that I worked on:
     </p>
     <ul role="list" class="projects-list">
@@ -66,13 +66,20 @@ const projects = (await getCollection("projects")).sort(
 <style>
   main {
     margin: auto;
-    padding: 1.5rem;
-    max-width: 800px;
+    padding: var(--page-padding);
+    max-width: var(--content-width);
   }
-  h1 {
-    font-size: 3rem;
+  .eyebrow {
+    font-size: var(--fs-eyebrow);
+    font-weight: 500;
+    color: #666;
+    margin: 0 0 0.25rem;
+  }
+  .display {
+    font-size: var(--fs-display);
     font-weight: 800;
-    margin: 0;
+    line-height: 1.15;
+    margin: 0 0 1rem;
   }
   section {
     margin: 3rem 0;
@@ -81,7 +88,7 @@ const projects = (await getCollection("projects")).sort(
     margin-top: 2rem;
   }
   .skills-heading {
-    font-size: 1.75rem;
+    font-size: var(--fs-h2);
     font-weight: 800;
     margin: 0 0 1rem;
   }
@@ -104,14 +111,10 @@ const projects = (await getCollection("projects")).sort(
   .highlight {
     font-weight: 700;
   }
-  .text-lg {
-    font-size: 2.3rem;
-  }
-  .text-medium {
-    font-size: 1.5rem;
-  }
-  .font-medium {
-    font-weight: 500;
+  .text-body {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    margin: 0 0 1rem;
   }
   .projects-list {
     display: grid;
