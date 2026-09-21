@@ -115,6 +115,12 @@ const projects = (await getCollection("projects")).sort(
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     background-position: 0%;
+    /* Without this, a gradient-clipped span that wraps onto multiple
+         lines paints one continuous gradient across the whole bounding
+         box, so each line shows a different slice of it. Cloning makes
+         every line fragment paint the same slice independently. */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
   .highlight {
     font-weight: 700;
@@ -159,9 +165,9 @@ const projects = (await getCollection("projects")).sort(
     font-size: 1.05rem;
     text-decoration: none;
     transition:
-      background-position 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-      color 0.3s ease,
-      border-color 0.3s ease;
+      background-position 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     margin: 0 0 1.5rem;
   }
   .cta-button:hover,
