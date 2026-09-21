@@ -115,10 +115,7 @@ const projects = (await getCollection("projects")).sort(
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     background-position: 0%;
-    /* Without this, a gradient-clipped span that wraps onto multiple
-         lines paints one continuous gradient across the whole bounding
-         box, so each line shows a different slice of it. Cloning makes
-         every line fragment paint the same slice independently. */
+    /* Clones the gradient per wrapped line instead of stretching one gradient across all lines' combined box. */
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }
