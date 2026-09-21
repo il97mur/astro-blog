@@ -31,6 +31,10 @@ const projects = (await getCollection("projects")).sort(
       comfortable with Vue.js, Nuxt.js, and reading backend code (PHP/Laravel),
       which helps me work closely with backend engineers.
     </p>
+    <a class="cta-button" href="mailto:ilha9749@gmail.com">
+      Get in touch <span aria-hidden="true">&rarr;</span>
+    </a>
+
     <p class="text-body">
       Below you can see the list of projects that I worked on:
     </p>
@@ -138,6 +142,35 @@ const projects = (await getCollection("projects")).sort(
     font-size: var(--fs-body);
     line-height: 1.6;
     margin: 0 0 1rem;
+  }
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: rgba(var(--accent), 0.12);
+    background-image: none;
+    background-size: 400%;
+    background-position: 100%;
+    border: 1px solid rgba(var(--accent), 0.5);
+    color: #111;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition:
+      background-position 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.3s ease,
+      border-color 0.3s ease;
+    margin: 0 0 1.5rem;
+  }
+  .cta-button:hover,
+  .cta-button:focus-visible {
+    background-color: transparent;
+    background-image: var(--accent-gradient);
+    background-position: 0%;
+    border-color: transparent;
+    color: #fff;
   }
   .projects-list {
     display: grid;
