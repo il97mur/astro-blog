@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 const skills = [
   "React",
   "TypeScript",
+  "Next.js",
   "Vue.js / Nuxt.js",
   "Redux Toolkit / RTK Query",
   "Zustand",
@@ -12,6 +13,8 @@ const skills = [
   "PHP / Laravel",
   "Node.js",
   "REST API",
+  "Supabase",
+  "PostHog / Product Analytics",
   "Feature-Sliced Design",
   "VeeValidate / Zod",
   "Vitest / React Testing Library",
@@ -27,12 +30,26 @@ const extras = [
 
 const metrics = [
   { value: "6+", label: "лет коммерческой разработки" },
-  { value: "−35%", label: "время отклика UI (ERP)" },
+  { value: "−88%", label: "размер деплоя serverless-функций" },
   { value: "−60%", label: "ошибок ввода (телемедицина)" },
-  { value: "−30%", label: "время загрузки (маркетплейс)" },
+  { value: "−35%", label: "время отклика UI (ERP)" },
 ];
 
 const experience = [
+  {
+    title: "Дата-платформа для ML-исследователей (зарубежный клиент)",
+    domain: "AI / Data Platform",
+    stack: "Next.js 16, TypeScript, Supabase (PostgreSQL), PostHog, Vercel",
+    headline:
+      "Сократил объём файлов, упаковываемых в каждую serverless-функцию, на 88%",
+    headlineDetail:
+      "нашёл причину — динамические пути (path.join(process.cwd(), ...)) не анализируются статически, поэтому трейсер Vercel/Turbopack подстраховывался и паковал в каждую из 88 функций весь проект (медиана упала с 177MB до 9.7MB на функцию). Деплой, который раньше висел 10+ минут на «Deploying outputs», стал ощутимо быстрее, что напрямую сокращает время до релиза фичи и время восстановления после инцидента.",
+    bullets: [
+      "Реализовал CMS-управление порядком карточек каталога — редакторы меняют витрину сами, без участия разработчиков и релизов.",
+      "Сделал загрузку крупных файлов в админке надёжной (до ~300 МБ) без падений по памяти на сервере.",
+      "Пишу и поддерживаю unit- и e2e-проверки (аутентификация, аналитика, надёжность ingest-пайплайна), которые гоняются в CI перед каждым мерджем.",
+    ],
+  },
   {
     title: "Телемедицинская платформа для врачей и пациентов",
     domain: "Healthtech",
